@@ -10,17 +10,19 @@ import categoriesRoutes from './routes/categoriesRoutes.js'
 
 const app = express();
 
-app.use('api/user', userRoutes);
-
-app.use('api/admin', adminRoutes);
-
-app.use('api/post', postRoutes);
-
-app.use('api/comments', commentsRoutes);
-
-app.use('api/categories', categoriesRoutes);
-
 app.use(express.json());
+
+app.use('/api/user', userRoutes);
+
+app.use('/api/admin', adminRoutes);
+
+app.use('/api/post', postRoutes);
+
+app.use('/api/comments', commentsRoutes);
+
+app.use('/api/categories', categoriesRoutes);
+
+
 
 app.use(handleError);
 

@@ -6,7 +6,7 @@ const categoriesRoutes = express.Router();
 //------------------------------------------------------------------------
 /**
  * @openapi
- * /all:
+ * /api/categories/all:
  *   get:
  *     summary: Obtiene todas las categorías de los posts.
  *     description: Retorna todas las categorías de los posts disponibles en la base de datos.
@@ -21,7 +21,7 @@ const categoriesRoutes = express.Router();
 categoriesRoutes.get('/all',categoryController.getCategories);
 /**
  * @openapi
- * /search/{id}:
+ * /api/categories/search/{id}:
  *   get:
  *     summary: Obtiene los posts asociados a una categoría por su ID.
  *     description: Retorna los posts asociados a la categoría correspondiente al ID proporcionado.

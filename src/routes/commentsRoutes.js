@@ -5,7 +5,7 @@ const commentsRoutes = express.Router();
 
 /**
  * @openapi
- * /new:
+ * /api/comments/new:
  *   post:
  *     summary: Publica un nuevo comentario en un post.
  *     description: Publica un nuevo comentario en un post específico identificado por el ID de usuario y el ID de post proporcionados.
@@ -37,7 +37,7 @@ commentsRoutes.post('/new', commentController.postComment);
 
 /**
  * @openapi
- * /edit:
+ * /api/comments/edit:
  *   put:
  *     summary: Actualiza un comentario existente.
  *     description: Actualiza el contenido de un comentario existente identificado por su ID.
@@ -66,7 +66,7 @@ commentsRoutes.put('/edit', commentController.updateComment);
 
 /**
  * @openapi
- * /delete:
+ * /api/comments/delete:
  *   delete:
  *     summary: Elimina un comentario.
  *     description: Elimina un comentario identificado por su ID.

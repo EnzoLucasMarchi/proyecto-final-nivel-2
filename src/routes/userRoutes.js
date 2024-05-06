@@ -5,7 +5,7 @@ const userRoutes = express.Router();
 
 /**
  * @openapi
- * /myaccount/{id}:
+ * /api/user/myaccount/{id}:
  *   get:
  *     summary: Obtiene información de la cuenta del usuario solicitante.
  *     description: Retorna los datos de la cuenta del usuario correspondientes al ID proporcionado.
@@ -29,7 +29,7 @@ const userRoutes = express.Router();
 userRoutes.get('/myaccount/:id', userController.userGetAcc);
 /**
  * @openapi
- * /signin:
+ * /api/user/signin:
  *   post:
  *     summary: Registra un nuevo usuario.
  *     description: Crea una nueva cuenta de usuario con el nombre, apellido y correo electrónico proporcionados.
@@ -60,7 +60,7 @@ userRoutes.get('/myaccount/:id', userController.userGetAcc);
 userRoutes.post('/signin', userController.userSignIn);
 /**
  * @openapi
- * /update:
+ * /api/user/update:
  *   put:
  *     summary: Actualiza la información de la cuenta de usuario.
  *     description: Actualiza la información de la cuenta de usuario (nombre, apellido, correo electrónico) proporcionada, identificada por el ID de usuario.
@@ -93,7 +93,7 @@ userRoutes.post('/signin', userController.userSignIn);
  */
 userRoutes.put('/update', userController.userUpdateAcc);
 /**
- * * /deleteaccount:
+ * * /api/user/deleteaccount:
   * delete:
     * summary: Elimina la cuenta de usuario.
     * description: Elimina la cuenta de usuario identificada por el ID de usuario proporcionado.

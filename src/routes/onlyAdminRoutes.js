@@ -6,7 +6,7 @@ const adminRoutes = express.Router();
 
 /**
  * @openapi
- * /{id}/accounts:
+ * /api/admin/{id}/accounts:
  *   get:
  *     summary: Obtiene información de la cuenta de un usuario por su ID.
  *     description: Retorna los datos de la cuenta del usuario correspondientes al ID proporcionado.
@@ -30,7 +30,7 @@ const adminRoutes = express.Router();
 adminRoutes.get('/:id/accounts/', adminController.getUserAccs);
 /**
  * @openapi
- * categories/new:
+ * /api/admin/categories/new:
  *   post:
  *     summary: Crea una nueva categoría.
  *     description: Crea una nueva categoría con el título y la descripción proporcionados, solo si el usuario tiene permisos de administrador.
@@ -60,10 +60,10 @@ adminRoutes.get('/:id/accounts/', adminController.getUserAccs);
  *       '500':
  *         description: Error del servidor.
  */
-adminRoutes.post('categories/new', adminController.postCategory);
+adminRoutes.post('/categories/new', adminController.postCategory);
 /**
  * @openapi
- * categories/edit:
+ * /api/admin/categories/edit:
  *   put:
  *     summary: Actualiza una categoría existente.
  *     description: Actualiza el título y/o la descripción de una categoría existente identificada por su ID, solo si el usuario tiene permisos de administrador.
@@ -96,10 +96,10 @@ adminRoutes.post('categories/new', adminController.postCategory);
  *       '500':
  *         description: Error del servidor.
  */
-adminRoutes.put('categories/edit', adminController.updateCategory);
+adminRoutes.put('/categories/edit', adminController.updateCategory);
 /**
  * @openapi
- * categories/delete:
+ * api/admin/categories/delete:
  *   delete:
  *     summary: Elimina una categoría.
  *     description: Elimina una categoría identificada por su ID, solo si el usuario tiene permisos de administrador.
@@ -129,6 +129,6 @@ adminRoutes.put('categories/edit', adminController.updateCategory);
  *       '500':
  *         description: Error del servidor.
  */
-adminRoutes.delete('categories/delete', adminController.deleteCategory);
+adminRoutes.delete('/categories/delete', adminController.deleteCategory);
 
 export default adminRoutes;

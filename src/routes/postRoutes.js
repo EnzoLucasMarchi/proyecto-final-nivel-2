@@ -5,7 +5,7 @@ const postsRoutes = express.Router();
 
 /**
  * @openapi
- * /myposts/u/{id}:
+ * /api/post/myposts/u/{id}:
  *   get:
  *     summary: Obtiene los posts del usuario por su ID.
  *     description: Retorna los posts del usuario correspondientes al ID proporcionado.
@@ -29,7 +29,7 @@ const postsRoutes = express.Router();
 postsRoutes.get('/myposts/u/:id', postController.userGetPosts);
 /**
  * @openapi
- * /all:
+ * /api/post/all:
  *   get:
  *     summary: Obtiene todos los posts y sus comentarios.
  *     description: Retorna todos los posts y sus comentarios en orden ascendente por título del post.
@@ -44,7 +44,7 @@ postsRoutes.get('/myposts/u/:id', postController.userGetPosts);
 postsRoutes.get('/all', postController.getAllPosts);
 /**
  * @openapi
- * /{title}:
+ * /api/post/{title}:
  *   get:
  *     summary: Obtiene un post por su título.
  *     description: Retorna el post correspondiente al título proporcionado.
@@ -68,7 +68,7 @@ postsRoutes.get('/all', postController.getAllPosts);
 postsRoutes.get('/:title', postController.getPostTitle);
 /**
  * @openapi
- * /new:
+ * /api/post/new:
  *   post:
  *     summary: Publica un nuevo contenido.
  *     description: Publica un nuevo contenido con el nombre, apellido y correo electrónico proporcionados.
@@ -99,7 +99,7 @@ postsRoutes.get('/:title', postController.getPostTitle);
 postsRoutes.post('/new', postController.newPost);
 /**
  * @openapi
- * /edit:
+ * /api/post/edit:
  *   put:
  *     summary: Actualiza un post existente.
  *     description: Actualiza el título y/o contenido de un post existente identificado por su ID.
@@ -131,8 +131,7 @@ postsRoutes.put('/edit', postController.updatePost);
 /**
  * @openapi
  *  paths:
- *  /delete:
- *   delete:
+ *  /api/post/delete:
  *     summary: Elimina una cuenta de usuario.
  *     description: Elimina la cuenta de usuario identificada por su ID, junto con todos los datos asociados.
  *     parameters:
